@@ -1,0 +1,22 @@
+name: Github Actions Intro
+
+on:
+  push:
+    - branches:
+        - master
+
+jobs:
+  test:
+    runs-on: linux
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Nodejs ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install
+        run: npm install
+      - name: Test
+        run: npm test
+
