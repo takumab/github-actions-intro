@@ -2,8 +2,7 @@ name: Github Actions Intro
 
 on:
   push:
-    - branches:
-        - master
+    branches: [master]
 
 jobs:
   test:
